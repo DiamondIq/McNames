@@ -1,0 +1,60 @@
+@font-face {
+    src: url(assets/fonts/Minecraftia-Bold.otf);
+    font-family: Minecraftia-Bold;
+}
+
+
+body{
+    font-family: Minecraftia-Bold, sans-serif;
+    font-size: 25px;
+    color: hsl(0, 0%, 10%);
+    background-color: rgb(28, 137, 28);
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container{
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px;
+    min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 10px 10px 5px hsla(0, 0%, 0%, 0.400);
+}
+
+.container button, input{
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: Minecraftia-Bold, sans-serif;
+    font-size: 25px;
+    color: hsl(0, 0%, 10%);
+}
+
+.container button{
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    background-color: hsl(120, 66%, 40%);
+    border: none;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.container button:hover{
+    background-color: hsl(120, 66%, 50%);
+}
+
+.container input{
+    margin-left: 10px;
+    width: 300px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
