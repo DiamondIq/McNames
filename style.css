@@ -16,7 +16,8 @@ body{
 }
 
 p::selection, input::selection, h1::selection, img::selection, button::selection{
-    background-color: rgb(28, 137, 28);
+    background-color: rgb(28,137,28);
+    
 }
 
 header{
