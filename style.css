@@ -36,6 +36,22 @@ header img{
     margin-top: 10px
 }
 
+.navBar ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navBar a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 15px   ;
+}
+
+.navBar li{
+    float: left;
+}
+
 
 .container{
     background-color: white;

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McNames - Color Tools</title>
+    <link rel="stylesheet" href="colors.css">
+    <link rel="shortcut icon" href="assets/images/Logo.png" type="image/png">
+
+</head>
+<body>
+    <header>
+        <img src="assets/images/Logo.png" alt="Logo">
+        <h1>McNames</h1>
+
+        <nav class="navBar">
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+            </ul>
+            <ul>
+                <a href="colors.html">
+                    <li>Color Tools</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <p class="colors" id="black">0</p>
+        <p class="colors" id="darkBlue">1</p>
+        <p class="colors" id="green">2</p>
+        <p class="colors" id="teal">3</p>
+        <p class="colors" id="darkRed">4</p>
+        <p class="colors" id="magenta">5</p>
+        <p class="colors" id="gold">6</p>
+        <p class="colors" id="gray">7</p>
+        <p class="colors" id="darkGray">8</p>
+        <p class="colors" id="blue">9</p>
+        <p class="colors" id="lime">a</p>
+        <p class="colors" id="aqua">b</p>
+        <p class="colors" id="red">c</p>
+        <p class="colors" id="pink">d</p>
+        <p class="colors" id="yellow">e</p>
+        <p class="colors" id="white">f</p>
+
+    </div>
+
+    <div class="styles">
+        <p id="bold">l: Bold</p>
+        <p id="strikethrough">m: Strikethrough</p>
+        <p id="underline">n: Underline</p>
+        <p id="italic">o: Italic</p>
+        <p id="reset">r: Reset</p>
+        <p id="magic">k: magic</p>
+    </div>
+
+    <script>
+        const magicTextField = document.getElementById('magic');
+
+        function magicText() {
+            if (magicTextField) {
+                    magicTextField.textContent = `k: ${generateRandomLetters(5)}`; // Update the IGN display
+                } else {
+                    console.error("The IGN input element could not be found in the DOM.");
+                }
+        }
+
+        function generateRandomLetters(count) {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZqwertyuiopasdfghjklzxcvbnm1234567890/'; // You can use lowercase letters or mix both
+  let result = '';
+
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    result += letters[randomIndex];
+  }
+
+  return result;
+}
+
+        const intervalId = setInterval(magicText, 40);
+    </script>
+</body>
+</html>
