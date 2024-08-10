@@ -19,12 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (uuidInput) {
                     uuidInput.textContent = `UUID: ${uuid}`; // Update the UUID display
+                    uuidInput.style.display = "block";
                 } else {
                     console.error("The UUID input element could not be found in the DOM.");
                 }
 
                 if (ignInput) {
                     ignInput.textContent = `IGN: ${ign}`; // Update the IGN display
+                    ignInput.style.display = "block";
                 } else {
                     console.error("The IGN input element could not be found in the DOM.");
                 }
@@ -38,7 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.error("The image element could not be found in the DOM.");
                 }
             } else {
-                console.error("No data returned from getPlayerData.");
+                if (ignInput) {
+                    ignInput.textContent = "This username is avaiable and doesn't exist"; // Display error message
+                } else {
+                    console.error("The IGN input element could not be found in the DOM.");
+                }
+
+                if (skinImg) {
+                    skinImg.style.display = "none";
+                } else {
+                    console.error("The image element could not be found in the DOM.");
+                }
+
+                if (uuidInput) {
+                    uuidInput.style.display = "none";
+                } else {
+                    console.error("The UUID input element could not be found in the DOM.");
+                }
+
             }
         }
     });
@@ -54,6 +73,9 @@ async function getPlayerData(username) {
         if (response.ok) {
             const data = await response.json();
             return data;
+        } else if (response.status === 404) {
+            console.error("Account not found.");
+            return null; // Return null if the account does not exist
         } else {
             console.error("Failed to fetch player data.");
         }

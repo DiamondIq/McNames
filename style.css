@@ -15,6 +15,26 @@ body{
     align-items: center;
 }
 
+p::selection, input::selection, h1::selection, img::selection, button::selection{
+    background-color: rgb(28, 137, 28);
+}
+
+header{
+    display: flex;
+    min-width: 100%;
+    background-color: hsl(120, 66%, 42%);
+    padding-left: 1.2rem;
+}
+
+header h1{
+    margin-left: 1.1rem;
+}
+
+header img{
+    height: 100px;
+    margin-top: 10px
+}
+
 
 .container{
     background-color: white;
