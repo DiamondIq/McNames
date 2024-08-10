@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
     const nameForm = document.querySelector(".nameForm");
     const usernameInput = document.querySelector(".nameInput");
     const skinImg = document.getElementById("skinImage");
     const uuidInput = document.getElementById("uuid");
     const ignInput = document.getElementById("ign");
 
-    nameForm.addEventListener("submit", async (event) => { // Make the event handler async
+    nameForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const username = usernameInput.value.trim(); // Trim whitespace
@@ -46,10 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getPlayerData(username) {
+    // Use corsproxy.io to bypass CORS
     const apiUrl = `https://api.mojang.com/users/profiles/minecraft/${username}`;
+    const proxiedUrl = 'https://corsproxy.io/?' + encodeURIComponent(apiUrl);
     
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(proxiedUrl);
         if (response.ok) {
             const data = await response.json();
             return data;
